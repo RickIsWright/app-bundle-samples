@@ -21,14 +21,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.google.android.samples.dynamicnavigator.includedgraphfeature.databinding.FragmentIncludedFeatureBinding
 
 /** A basic [Fragment] subclass that's inside of an included navigation graph. */
-class IncludedFeatureFragment : Fragment() {
+class IncludedFeatureFragment : Fragment(R.layout.fragment_included_feature) {
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? =
-        inflater.inflate(R.layout.fragment_included_feature, container, false)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        val binding = FragmentIncludedFeatureBinding.bind(view)
+        super.onViewCreated(view, savedInstanceState)
+    }
 }

@@ -19,12 +19,7 @@ package com.google.android.samples.dynamicnavigator.feature
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
+import com.google.android.samples.dynamicnavigator.feature.databinding.ActivityFeatureBinding
 
 /** A basic [AppCompatActivity] subclass inside a dynamic feature module. */
-class FeatureActivity : AppCompatActivity() {
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_feature)
-    }
-}
+class FeatureActivity : AppCompatActivity(R.layout.activity_feature)
