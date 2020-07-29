@@ -16,7 +16,25 @@
 
 package com.google.android.samples.dynamicnavigator.feature
 
+import android.os.Bundle
 import androidx.fragment.app.Fragment
+import android.view.LayoutInflater
+import android.widget.Button
+import android.view.View
+import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
+import com.google.android.samples.dynamicnavigator.feature.databinding.FragmentFeatureBinding
+import com.google.android.samples.dynamicnavigator.R as baseR
 
 /** A basic [Fragment] subclass in a dynamic feature module. */
-class FeatureFragment : Fragment(R.layout.fragment_feature)
+class FeatureFragment : Fragment(R.layout.fragment_feature) {
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        FragmentFeatureBinding.bind(view).also {
+            it.navigateToIncludedGraphFeature.setOnClickListener {
+                findNavController().navigate(baseR.id.includedGraph)
+            }
+        }
+    }
+}
